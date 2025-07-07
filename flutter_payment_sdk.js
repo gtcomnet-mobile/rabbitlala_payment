@@ -62,17 +62,22 @@
     // Handle SDK close
     window.addEventListener("message", (event) => {
       if (event.data === "sdk_closed") {
+        closeLoader();
         const iframe = document.getElementById("flutter-sdk-iframe");
         if (iframe) iframe.remove();
       }
       if (event.data === "sdk_opened") {
-        const loader = document.getElementById("flutter-sdk-loader");
-        // delay removing the loader to ensure the iframe is fully loaded
-        setTimeout(() => {
-          if (loader) loader.remove();
-        }, 500); // Adjust delay as needed
+        closeLoader();
+
+      // Adjust delay as needed
       }
     });
+   function  closeLoader(){
+      const loader = document.getElementById("flutter-sdk-loader");
+      if (loader) {
+        loader.remove();
+      }
+    };
   }
 
   // Expose globally
