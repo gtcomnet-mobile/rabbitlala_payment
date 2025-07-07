@@ -49,9 +49,12 @@
 
     // Create iframe
     const iframe = document.createElement("iframe");
-    iframe.src = `https://checkout.gtcomnet.com/?reference=${reference}&is_live_mode=${isLiveMode}`;
-    iframe.id = "flutter-sdk-iframe";
+    const baseUrl = isLiveMode
+    ? "https://checkout.gtcomnet.com"
+    : "https://checkout.gtcomnet.com"; 
+    iframe.src = `${baseUrl}/?reference=${reference}&is_live_mode=${isLiveMode}`;
 
+    iframe.id = "flutter-sdk-iframe";
     iframe.style.position = "fixed";
     iframe.style.top = "40%";
     iframe.style.left = "50%";
