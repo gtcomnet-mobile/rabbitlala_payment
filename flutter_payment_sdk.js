@@ -45,7 +45,7 @@
     iframe.style.width = "90%";
     iframe.style.maxWidth = "100%";
     iframe.style.maxHeight = "100%";
-    iframe.style.height = "600px";
+    iframe.style.height = "100%";
     iframe.style.zIndex = "9999";
     document.body.appendChild(iframe);
 
