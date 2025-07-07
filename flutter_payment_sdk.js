@@ -49,8 +49,13 @@
 
     iframe.onload = () => {
       const loader = document.getElementById("flutter-sdk-loader");
-      if (loader) loader.remove();
+      // delay removing the loader to ensure the iframe is fully loaded
+      setTimeout(() => {
+        if (loader) loader.remove();
+      }, 2000); // Adjust delay as needed
     };
+      // if (loader) loader.remove();
+    // };
 
     document.body.appendChild(iframe);
 
