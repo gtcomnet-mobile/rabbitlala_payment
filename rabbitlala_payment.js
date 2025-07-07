@@ -1,5 +1,5 @@
 (function (global) {
-  function launchRabitlalaPayment({ reference, isLiveMode = false }) {
+  function launchRabbitlalaPayment({ reference, isLiveMode = false }) {
     const existingIframe = document.getElementById("flutter-sdk-iframe");
     if (existingIframe) existingIframe.remove();
 
@@ -88,5 +88,5 @@
     }
   }
 
-  global.launchRabitlalaPayment = launchRabitlalaPayment;
+  global.launchRabbitlalaPayment = launchRabbitlalaPayment;
 })(window);
