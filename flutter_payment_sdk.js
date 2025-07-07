@@ -64,9 +64,11 @@
     iframe.style.zIndex = "9999";
 
     // Hide loader on iframe load
-    // iframe.onload = () => {
-    //   closeOverlay();
-    // };
+    iframe.onload = () => {
+    setTimeout(()=>{
+      closeOverlay();
+    },1000)
+    };
 
     document.body.appendChild(iframe);
 
