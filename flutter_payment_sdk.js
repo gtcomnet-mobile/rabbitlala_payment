@@ -38,8 +38,10 @@
     iframe.id = "flutter-sdk-iframe";
 
     iframe.style.position = "fixed";
-    iframe.style.top = "40%";
-    iframe.style.left = "50%";
+    iframe.style.top = "0%";
+    iframe.style.left = "0%";
+    iframe.style.right = "0%";
+    iframe.style.bottom = "0%";
     iframe.style.transform = "translate(-50%, -50%)";
     iframe.style.border = "none";
     iframe.style.width = "100%";
