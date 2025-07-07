@@ -42,7 +42,7 @@
     iframe.style.left = "50%";
     iframe.style.transform = "translate(-50%, -50%)";
     iframe.style.border = "none";
-    iframe.style.width = "90%";
+    iframe.style.width = "100%";
     iframe.style.maxWidth = "100%";
     iframe.style.maxHeight = "100%";
     iframe.style.height = "100%";
