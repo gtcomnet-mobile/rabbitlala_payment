@@ -38,8 +38,8 @@
     iframe.id = "flutter-sdk-iframe";
 
     iframe.style.position = "relative"; // Changed to relative for centering
-    // iframe.style.top = "40%";
-    // iframe.style.left = "50%";
+    iframe.style.top = "40%";
+    iframe.style.left = "50%";
     iframe.style.transform = "translate(-50%, -50%)";
     iframe.style.border = "none";
     iframe.style.width = "100%";
