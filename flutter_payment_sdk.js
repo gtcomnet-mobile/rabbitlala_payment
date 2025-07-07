@@ -6,6 +6,21 @@
     const existingLoader = document.getElementById("flutter-sdk-loader");
     if (existingLoader) existingLoader.remove();
 
+    const existingBackdrop = document.getElementById("flutter-sdk-backdrop");
+    if (existingBackdrop) existingBackdrop.remove();
+
+    // Create backdrop
+    const backdrop = document.createElement("div");
+    backdrop.id = "flutter-sdk-backdrop";
+    backdrop.style.position = "fixed";
+    backdrop.style.top = "0";
+    backdrop.style.left = "0";
+    backdrop.style.width = "100%";
+    backdrop.style.height = "100%";
+    backdrop.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    backdrop.style.zIndex = "9997";
+    document.body.appendChild(backdrop);
+
     // Create loader
     const loader = document.createElement("div");
     loader.id = "flutter-sdk-loader";
@@ -47,29 +62,33 @@
     iframe.style.maxHeight = "100%";
     iframe.style.height = "100%";
     iframe.style.zIndex = "9999";
+
+    // Hide loader on iframe load
+    iframe.onload = () => {
+      closeOverlay();
+    };
+
     document.body.appendChild(iframe);
 
-    // Handle SDK close
+    // Handle SDK close or ready messages
     window.addEventListener("message", (event) => {
       if (event.data === "sdk_closed") {
-        closeLoader();
+        closeOverlay();
         const iframe = document.getElementById("flutter-sdk-iframe");
         if (iframe) iframe.remove();
       }
       if (event.data === "sdk_opened") {
-        closeLoader();
-
-      // Adjust delay as needed
+        closeOverlay();
       }
     });
-   function  closeLoader(){
+
+    function closeOverlay() {
       const loader = document.getElementById("flutter-sdk-loader");
-      if (loader) {
-        loader.remove();
-      }
-    };
+      if (loader) loader.remove();
+      const backdrop = document.getElementById("flutter-sdk-backdrop");
+      if (backdrop) backdrop.remove();
+    }
   }
 
-  // Expose globally
   global.launchFlutterPayment = launchFlutterPayment;
 })(window);
