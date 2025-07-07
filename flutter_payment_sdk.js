@@ -74,7 +74,7 @@
     };
 
     document.body.appendChild(iframe);
-
+    document.body.style.background= "#ffffff"
     // Handle SDK close or ready messages
     window.addEventListener("message", (event) => {
       if (event.data === "sdk_closed") {
