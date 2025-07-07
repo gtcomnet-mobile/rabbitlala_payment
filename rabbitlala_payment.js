@@ -1,17 +1,17 @@
 (function (global) {
   function launchRabbitlalaPayment({ reference, isLiveMode = false }) {
-    const existingIframe = document.getElementById("flutter-sdk-iframe");
+    const existingIframe = document.getElementById("rabbitlala_iframe");
     if (existingIframe) existingIframe.remove();
 
-    const existingLoader = document.getElementById("flutter-sdk-loader");
+    const existingLoader = document.getElementById("rabbitlala_loader");
     if (existingLoader) existingLoader.remove();
 
-    const existingBackdrop = document.getElementById("flutter-sdk-backdrop");
+    const existingBackdrop = document.getElementById("rabbitlala_backdrop");
     if (existingBackdrop) existingBackdrop.remove();
 
     // Create backdrop
     const backdrop = document.createElement("div");
-    backdrop.id = "flutter-sdk-backdrop";
+    backdrop.id = "rabbitlala_backdrop";
     backdrop.style.position = "fixed";
     backdrop.style.top = "0";
     backdrop.style.left = "0";
@@ -23,7 +23,7 @@
 
     // Create loader
     const loader = document.createElement("div");
-    loader.id = "flutter-sdk-loader";
+    loader.id = "rabbitlala_loader";
     loader.style.position = "fixed";
     loader.style.top = "50%";
     loader.style.left = "50%";
@@ -52,9 +52,9 @@
     const baseUrl = isLiveMode
     ? "https://checkout.gtcomnet.com"
     : "https://checkout.gtcomnet.com"; 
-    iframe.src = `${baseUrl}/?reference=${reference}&is_live_mode=${isLiveMode}`;
+    iframe.src = `${baseUrl}/?reference=${reference}`;
 
-    iframe.id = "flutter-sdk-iframe";
+    iframe.id = "rabbitlala_iframe";
     iframe.style.position = "fixed";
     iframe.style.top = "40%";
     iframe.style.left = "50%";
@@ -70,20 +70,20 @@
 
     // Handle SDK close or ready messages
     window.addEventListener("message", (event) => {
-      if (event.data === "sdk_closed") {
+      if (event.data === "rabbitlala_closed") {
         closeOverlay();
-        const iframe = document.getElementById("flutter-sdk-iframe");
+        const iframe = document.getElementById("rabbitlala_iframe");
         if (iframe) iframe.remove();
       }
-      if (event.data === "sdk_opened") {
+      if (event.data === "rabbitlala_opened") {
         closeOverlay();
       }
     });
 
     function closeOverlay() {
-      const loader = document.getElementById("flutter-sdk-loader");
+      const loader = document.getElementById("rabbitlala_loader");
       if (loader) loader.remove();
-      const backdrop = document.getElementById("flutter-sdk-backdrop");
+      const backdrop = document.getElementById("rabbitlala_backdrop");
       if (backdrop) backdrop.remove();
     }
   }
