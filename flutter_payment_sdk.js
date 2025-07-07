@@ -37,7 +37,7 @@
     iframe.src = `https://checkout.gtcomnet.com/?reference=${reference}&is_live_mode=${isLiveMode}`;
     iframe.id = "flutter-sdk-iframe";
 
-    iframe.style.position = "relative"; // Changed to relative for centering
+    iframe.style.position = "fixed";
     iframe.style.top = "40%";
     iframe.style.left = "50%";
     iframe.style.transform = "translate(-50%, -50%)";
