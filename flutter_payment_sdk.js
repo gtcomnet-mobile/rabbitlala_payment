@@ -17,7 +17,7 @@
     backdrop.style.left = "0";
     backdrop.style.width = "100%";
     backdrop.style.height = "100%";
-    backdrop.style.backgroundColor = "rgba(0, 0, 0, 0.0)";
+    backdrop.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
     backdrop.style.zIndex = "9997";
     document.body.appendChild(backdrop);
 
@@ -62,13 +62,6 @@
     iframe.style.maxHeight = "100%";
     iframe.style.height = "100%";
     iframe.style.zIndex = "9999";
-
-    // Hide loader on iframe load
-    iframe.onload = () => {
-    setTimeout(()=>{
-      closeOverlay();
-    },1000)
-    };
 
     document.body.appendChild(iframe);
 
