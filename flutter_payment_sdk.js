@@ -47,13 +47,13 @@
     iframe.style.height = "600px";
     iframe.style.zIndex = "9999";
 
-    iframe.onload = () => {
-      const loader = document.getElementById("flutter-sdk-loader");
-      // delay removing the loader to ensure the iframe is fully loaded
-      setTimeout(() => {
-        if (loader) loader.remove();
-      }, 2000); // Adjust delay as needed
-    };
+    // iframe.onload = () => {
+    //   const loader = document.getElementById("flutter-sdk-loader");
+    //   // delay removing the loader to ensure the iframe is fully loaded
+    //   setTimeout(() => {
+    //     if (loader) loader.remove();
+    //   }, 2000); // Adjust delay as needed
+    // };
       // if (loader) loader.remove();
     // };
 
@@ -64,6 +64,13 @@
       if (event.data === "sdk_closed") {
         const iframe = document.getElementById("flutter-sdk-iframe");
         if (iframe) iframe.remove();
+      }
+      if (event.data === "sdk_opened") {
+        const loader = document.getElementById("flutter-sdk-loader");
+        // delay removing the loader to ensure the iframe is fully loaded
+        setTimeout(() => {
+          if (loader) loader.remove();
+        }, 500); // Adjust delay as needed
       }
     });
   }
