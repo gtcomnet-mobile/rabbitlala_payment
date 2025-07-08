@@ -72,12 +72,12 @@
     window.addEventListener("message", (event) => {
       if (event.data === "rabbitlala_closed") {
         closeOverlay();
-        window.parent.postMessage("rabbitlala_closed", "*");
+        // window.parent.postMessage("rabbitlala_closed", "*");
         const iframe = document.getElementById("rabbitlala_iframe");
         if (iframe) iframe.remove();
       }
       if (event.data === "rabbitlala_opened") {
-        window.parent.postMessage("rabbitlala_opened", "*");
+        // window.parent.postMessage("rabbitlala_opened", "*");
         closeLoader();    
         }
     });
