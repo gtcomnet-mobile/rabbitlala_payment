@@ -78,15 +78,17 @@
       }
       if (event.data === "rabbitlala_opened") {
         window.parent.postMessage("rabbitlala_opened", "*");
-        closeOverlay();
-      }
+        closeLoader();    
+        }
     });
 
     function closeOverlay() {
-      const loader = document.getElementById("rabbitlala_loader");
-      if (loader) loader.remove();
       const backdrop = document.getElementById("rabbitlala_backdrop");
       if (backdrop) backdrop.remove();
+    }
+    function closeLoader() {
+      const loader = document.getElementById("rabbitlala_loader");
+      if (loader) loader.remove();
     }
   }
 
