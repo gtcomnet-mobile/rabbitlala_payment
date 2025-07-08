@@ -17,7 +17,7 @@
     backdrop.style.left = "0";
     backdrop.style.width = "100%";
     backdrop.style.height = "100%";
-    backdrop.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+    backdrop.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
     backdrop.style.zIndex = "9997";
     document.body.appendChild(backdrop);
 
