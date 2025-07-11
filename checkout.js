@@ -50,7 +50,7 @@
     // Create iframe
     const iframe = document.createElement("iframe");
     const baseUrl = isLiveMode
-    ? "https://checkout.gtcomnet.com"
+    ? "https://checkout.rabbitlala.ng"
     : "https://checkout.gtcomnet.com"; 
     iframe.src = `${baseUrl}/?reference=${reference}`;
 
