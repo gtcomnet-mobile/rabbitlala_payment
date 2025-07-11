@@ -45,8 +45,8 @@ launchRabbitlalaPayment({
 ```
 launchRabbitlalaPayment({ reference, isLiveMode = false })
 ```
-  #### reference (string) — Unique payment reference ID. Required
+  * reference (string) — Unique payment reference ID. Required
 
-  #### isLiveMode (boolean) — Set to true to use live environment, or false for sandbox. Default: false
+  * isLiveMode (boolean) — Set to true to use live environment, or false for sandbox. Default: false
 
 This function creates an iframe overlay with the checkout page, showing a loader and backdrop automatically.
