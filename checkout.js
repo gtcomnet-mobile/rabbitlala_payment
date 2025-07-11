@@ -1,3 +1,5 @@
+
+
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
       define([], factory); // AMD
@@ -7,6 +9,16 @@
       root.launchRabbitlalaPayment = factory(); // Browser global
     }
   }(typeof self !== 'undefined' ? self : this, function () {
+    /**
+     * Launches the Rabbitlala payment overlay by injecting an iframe, loader, and backdrop into the DOM.
+
+     * Removes any existing Rabbitlala payment elements before creating new ones.
+     * Listens for messages from the iframe to handle closing the overlay and hiding the loader.
+     *
+     * @param {Object} options - Options for launching the payment overlay.
+     * @param {string} options.reference - The payment reference to be passed to the Rabbitlala checkout.
+     * @param {boolean} [options.isLiveMode=false] - Whether to use the live Rabbitlala checkout URL.
+     */
     function launchRabbitlalaPayment({ reference, isLiveMode = false }) {
       const existingIframe = document.getElementById("rabbitlala_iframe");
       if (existingIframe) existingIframe.remove();
@@ -84,11 +96,17 @@
         }
       });
   
+      /**
+       * Removes the overlay backdrop element with the ID "rabbitlala_backdrop" from the DOM if it exists.
+       */
       function closeOverlay() {
         const backdrop = document.getElementById("rabbitlala_backdrop");
         if (backdrop) backdrop.remove();
       }
   
+      /**
+       * Removes the loader element with the ID "rabbitlala_loader" from the DOM if it exists.
+       */
       function closeLoader() {
         const loader = document.getElementById("rabbitlala_loader");
         if (loader) loader.remove();

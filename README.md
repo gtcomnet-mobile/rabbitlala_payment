@@ -9,7 +9,7 @@ A lightweight JavaScript SDK to embed Rabbitlala's payment checkout interface ea
 Install via npm:
 
 ```bash
-npm install rabbitlala-checkout
+npm install rabbitlala-checkou
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ npm install rabbitlala-checkout
 Import the SDK and launch the payment iframe:
 
 ```bash
-import launchRabbitlalaPayment from 'rabbitlala-checkout';
+import launchRabbitlalaPayment from 'rabbitlala';
 ```
 ```bash
 launchRabbitlalaPayment({
@@ -29,7 +29,7 @@ launchRabbitlalaPayment({
 
 ### Using CDN (direct script include)
 ```bash
-<script src="https://unpkg.com/rabbitlala-checkout"></script>
+<script src="https://checkout.rabbitlala.ng/js/checkout.min.js"></script>
 ```
 ```bash
 <script>

@@ -1,8 +1,8 @@
 {
   "name": "rabbitlala-checkout",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "SDK to launch Rabbitlala payment iframe",
-  "main": "checkout.umd.js",
+  "main": "checkout.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +15,6 @@
   "author": "GTCOMNET",
   "license": "UNLICENSED",
   "dependencies": {
-    "rabbitlala-checkout": "^1.0.0"
+    "rabbitlala-checkout": "^1.0.3"
   }
 }
