@@ -3,11 +3,15 @@ name: 🚀 Build & Deploy Rabbitlala SDK
 on:
   push:
     branches:
-      - main  # Or your default branch
+      - main  # or your default branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: rabbitlala_payment
 
     steps:
       - name: 📥 Checkout repository
@@ -22,10 +26,10 @@ jobs:
         run: npm install -g terser
 
       - name: 🔧 Minify UMD SDK
-        run: terser rabbitlala_payment/checkout.umd.js -c -m -o rabbitlala_payment/checkout.min.js
+        run: terser checkout.umd.js -c -m -o checkout.min.js
 
       - name: 🚀 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./rabbitlala_payment
